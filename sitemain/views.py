@@ -5,6 +5,6 @@ from sitemain.models import BillBook
 
 def home(request):
     context = {
-        "objects":BillBook.object.all()
+        "objects":BillBook.objects.all()
         }
     return render(request,'home.html',context)
