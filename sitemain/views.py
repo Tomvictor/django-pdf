@@ -13,7 +13,7 @@ def home(request):
 from django.http import HttpResponse
 from django.views.generic import View
 
-from yourproject.utils import render_to_pdf #created in step 4
+from sitemain.utils import render_to_pdf #created in step 4
 
 class GeneratePdf(View):
     def get(self, request, *args, **kwargs):
