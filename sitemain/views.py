@@ -1,15 +1,7 @@
 from django.shortcuts import render
 from sitemain.models import BillBook
 # Create your views here.
-
-
-def home(request):
-    context = {
-        "objects":BillBook.objects.all()
-        }
-    return render(request,'home.html',context)
-
-
+import datetime
 from django.http import HttpResponse
 from django.views.generic import View
 
@@ -25,3 +17,13 @@ class GeneratePdf(View):
          }
          pdf = render_to_pdf('invoice.html', data)
          return HttpResponse(pdf, content_type='application/pdf')
+
+
+
+
+def home(request):
+    context = {
+        "objects":BillBook.objects.all()
+        }
+    return render(request,'home.html',context)
+
