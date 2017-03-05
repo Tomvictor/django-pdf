@@ -7,7 +7,9 @@ from django.views.generic import View
 
 from sitemain.utils import render_to_pdf #created in step 4
 
-class GeneratePDF(View):
+from django.template.loader import get_template
+
+class GeneratePdf(View):
  def get(self, request, *args, **kwargs):
      template = get_template('invoice.html')
      context = {
